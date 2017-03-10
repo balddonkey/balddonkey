@@ -14,12 +14,9 @@ String.prototype.sl_startsWith = function(str) {
 }
 
 function route(path, pathname) {
-  console.log("route: " + pathname);
-  console.log("type: " + typeof pathname);
   if (pathname === "/") {
     pathname = "/index.html";
   }
-  console.log("route: " + pathname);
   let staticPath = "";
   if (pathname.sl_endsWith("html")) {
     staticPath = "./htmls";

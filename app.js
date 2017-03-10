@@ -18,7 +18,6 @@ let app = http.createServer((request, response) => {
   let pathName = url.parse(request.url).pathname || "/index.html",
     realPath = router.route(path, pathName); //path.join(staticPath, path.normalize(pathName.replace(/\.\./g, "")));; // 请求文件的在磁盘中的真实地址
 
-  console.log("realPath: " + realPath);
   fs.exists(realPath, (exists) => {
     if (!exists) {
       // 当文件不存在时
@@ -74,7 +73,7 @@ let app = http.createServer((request, response) => {
   });
 });
 
-// var port = 8888;
-var port = 80;
+var port = 8888;
+// var port = 80;
 // var domain = "107.170.244.39";
 app.listen(port);
